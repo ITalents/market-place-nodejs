@@ -1,0 +1,28 @@
+{
+  "name": "market-place-nodejs",
+  "version": "1.0.0",
+  "description": "O codigo do mais novo market place",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leoruiz197/market-place-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leoruiz197/market-place-nodejs/issues"
+  },
+  "homepage": "https://github.com/Leoruiz197/market-place-nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
