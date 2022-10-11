@@ -15,7 +15,7 @@ router.post('/addFavProduct/:id', usuarioController.addUserFavProductController)
 router.put('/update/:id', usuarioController.updateUserController);
 
 //rotas DELETE
-router.detele('/remove/:id', usuarioController.removeUserController);
+router.delete('/remove/:id', usuarioController.removeUserController);
 router.delete('/removeAddress', usuarioController.removeUserAddressController);
 router.delete('/removeFavProduct', usuarioController.removeUserFavProductController);
 
