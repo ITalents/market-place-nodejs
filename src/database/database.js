@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 function connectToDatabase() {
-    mongoose.connect("mongodb://localhost:27017/market-place",{
+    mongoose.connect(process.env.URLDATABASE,{
         useNewUrlParser: true,
         useUnifiedTopology: true,
     }).then(() => {
