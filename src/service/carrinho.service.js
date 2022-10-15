@@ -4,8 +4,8 @@ const findCarrinhoByIdService = (id) => {
     return Carrinho.findById(id);
 }
 
-const findAllCarrinhosService = () => {
-    return Carrinho.find();
+const findAllCarrinhosService = (limit, offset) => {
+    return Carrinho.find().limit(limit).skip(offset);
 }
 
 const createCarrinhoService = (body) => {

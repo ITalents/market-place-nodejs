@@ -4,8 +4,8 @@ const findUserByIdService = (id) => {
     return Usuario.findById(id);
 }
 
-const findAllUsersService = () => {
-    return Usuario.find();
+const findAllUsersService = (limit, offset) => {
+    return Usuario.find().limit(limit).skip(offset);
 }
 
 const createUserService = (body) => {

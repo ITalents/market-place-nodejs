@@ -22,7 +22,7 @@ const findUserByIdController = async (req, res) => {
 
 const findAllUsersController = async (req, res) => {
     try{
-       return res.status(200).send(await userService.findAllUsersService());
+       return res.status(200).send(await userService.findAllUsersService(req.query.limit, req.query.offset));
     }catch (err){
         console.log(`erro: ${err.message}`);
         return res.status(500).send({ message: `Erro inesperado tente novamente!`});  
