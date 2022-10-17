@@ -1,0 +1,52 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Market Place",
+        "description": "API de Market Place completa contendo o CRUD de diversos assuntos",
+        "contact": {
+            "name": "Leonardo",
+            "email": "leo@email.com.br"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/",
+            "description": "API de Teste LOCAL"
+        },
+        {
+            "url": "https://aws.amazon.com.br/14faoi534f/market-place/",
+            "description": "API de producao CLOUD"
+        }
+    ],
+    "paths": {
+        "/usuario/findAll":{
+            "get":{
+                "summary": "Lista todos os usuarios da API",
+                "description": "Rota responsavel por listar todos os usuarios da API",
+                "tags": ["Usuario"],
+                "responses": {
+                    "200": {
+                        "description": "Ok, tarefa realizada com sucesso"
+                    },
+                    "401": {
+                        "description": "Unauthorized, Erro de autenticação, problemas com o token"
+                    },
+                    "404": {
+                        "description": "Not Found, nenhum usuario encontrado"
+                    },
+                    "500": {
+                        "description": "Internal Server Error, alguma coisa deu errado no servidor"
+                    }
+                }
+            }
+        },
+        "/usuario/find":{
+            "get":{
+                "summary": "Lista o usuario que corresponde com o Id informado",
+                "description": "Rota responsavel por localizar um usuario da API atraves do ID informado",
+                "tags": ["Usuario"]
+            }
+        }
+    }
+}
