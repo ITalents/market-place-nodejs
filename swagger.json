@@ -22,21 +22,73 @@
     "paths": {
         "/usuario/findAll":{
             "get":{
+                "security": [
+                    {
+                        "bearerAuth":[]
+                    }
+                ],
                 "summary": "Lista todos os usuarios da API",
                 "description": "Rota responsavel por listar todos os usuarios da API",
                 "tags": ["Usuario"],
                 "responses": {
                     "200": {
-                        "description": "Ok, tarefa realizada com sucesso"
+                        "description": "Ok, tarefa realizada com sucesso",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"array",
+                                    "items":{
+                                        "type":"object",
+                                        "$ref": "#/components/schemas/Usuario"
+                                    }
+                                }
+                            }
+                        }                        
                     },
                     "401": {
-                        "description": "Unauthorized, Erro de autenticação, problemas com o token"
+                        "description": "Unauthorized, Erro de autenticação, problemas com o token",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        } 
                     },
                     "404": {
-                        "description": "Not Found, nenhum usuario encontrado"
+                        "description": "Not Found, nenhum usuario encontrado",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        } 
                     },
                     "500": {
-                        "description": "Internal Server Error, alguma coisa deu errado no servidor"
+                        "description": "Internal Server Error, alguma coisa deu errado no servidor",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "type":"object",
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        } 
                     }
                 }
             }
@@ -45,8 +97,83 @@
             "get":{
                 "summary": "Lista o usuario que corresponde com o Id informado",
                 "description": "Rota responsavel por localizar um usuario da API atraves do ID informado",
-                "tags": ["Usuario"]
+                "tags": ["Usuario"],
+                "responses": {
+                    "200": {
+                        "description": "aaaa"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth":{
+                "type":"http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "schemas":{
+            "Usuario": {
+                "type": "object",
+                "properties": {
+                    "nome": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "senha": {
+                        "type": "string"
+                    },
+                    "imagem": {
+                        "type": "string"
+                    },
+                    "enderecos": {
+                        "type": "array",
+                        "items":{
+                            "properties": {
+                                "rua": {
+                                    "type": "string"
+                                },
+                                "numero": {
+                                    "type": "number"
+                                },
+                                "complemento": {
+                                    "type": "string"
+                                },
+                                "CEP": {
+                                    "type": "string"
+                                },
+                                "createdAt": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "produtos_fav": {
+                        "type": "array",
+                        "items":{
+                            "properties": {
+                                "_id": {
+                                    "type": "string"
+                                },
+                                "createdAt": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "createdAt": {
+                        "type": "string"
+                    },
+                    "admin": {
+                        "type": "boolean"
+                    }
+                }
             }
         }
     }
+    
 }
