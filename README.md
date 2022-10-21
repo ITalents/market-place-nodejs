@@ -2,6 +2,9 @@
 
 O codigo do mais novo market place
 
+codigo desenvolvido em Javascript
+![NodeJS](https://www.opus-software.com.br/wp-content/uploads/2018/09/nodejs.jpg "NodeJS")
+
 ## Instalação
 
 1. baixe todo o codigo
@@ -27,6 +30,7 @@ Todos os endpoints de usuário listado abaixo
 | 401    | retorna o erro de autenticacao                                |
 | 404    | retorna uma mensagem informando que não encontrou o usuário |
 
+Trecho do codigo do controller findByID:
 
 ````javascript
 const findUserByIdController = async (req, res) => {
